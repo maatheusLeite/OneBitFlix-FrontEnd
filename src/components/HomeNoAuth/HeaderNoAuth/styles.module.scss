@@ -31,18 +31,22 @@
     transition: .3s;
     &:hover {
         border-color: $lightRed;
-        color: #fff;
+        color: $white;
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 455px) {
     .nav {
         justify-content: center;
     }
 
+    .imgLogoNav {
+        margin: 0px 10px;
+    }
+
     .navBtn {
         margin: 16px 10px;
-        border-color: #fff;
+        border-color: $white;
         font-size: 14px;
     }
 
