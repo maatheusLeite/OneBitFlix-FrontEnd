@@ -1,7 +1,7 @@
-import HeaderNoAuth from "@/src/components/HomeNoAuth/HeaderNoAuth/HeaderNoAuth";
-import PresentationSection from "@/src/components/PresentationSection/PresentationSection";
+import HeaderNoAuth from "@/src/components/homeNoAuth/HeaderNoAuth/HeaderNoAuth";
 import styles from "../styles/HomeNoAuth.module.scss"
-import CardsSection from "@/src/components/HomeNoAuth/CardsSection/CardsSection";
+import CardsSection from "@/src/components/homeNoAuth/CardsSection/CardsSection";
+import PresentationSection from "@/src/components/homeNoAuth/PresentationSection/PresentationSection";
 
 export default function HomeNotAuth() {
     return (
