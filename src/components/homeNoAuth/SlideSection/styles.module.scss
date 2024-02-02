@@ -1,0 +1,26 @@
+@import '../../../../styles/colors.module.scss';
+
+.slideSectionBtn {
+    font-weight: 400;
+    font-size: 18px;
+    background-color: transparent;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 10px 25px;
+    border: 2px solid $white;
+    border-radius: 6px;
+    transition: .3s;
+
+    .btnImg {
+        width: 11px;
+    }
+
+    &:hover {
+        border-color: $white;
+        background-color: $white;
+        color: #151515
+    }
+}

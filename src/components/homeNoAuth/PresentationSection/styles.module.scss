@@ -24,6 +24,7 @@
 
 .btnCta {
     font-weight: bold;
+    background-color: transparent;
     color: $white;
     display: flex;
     justify-content: center;
@@ -31,6 +32,7 @@
     gap: 25px;
     padding: 14px 30px;
     border: 2px solid $lightRed;
+    border-radius: 6px;
     transition: .3s;
 
     .btnImg {

@@ -1,5 +1,6 @@
-//@ts-ignore
-import { Splide, SplideSlide } from 'splidejs/react-splide';
+"use client"
+
+import { Splide, SplideSlide } from "@splidejs/react-splide"
 import "@splidejs/splide/dist/css/splide.min.css"
 import { CourseType } from '../../../services/courseService'
 import SlideCard from '../SlideCard/SlideCard';
@@ -19,7 +20,7 @@ export default function SlideComponent({ course }: props) {
                     pagination: false
                 }}>
                     {course?.map((course) => (
-                        <SplideSlide key={course.id}>
+                        <SplideSlide key={course.id} >
                             <SlideCard course={course} />
                         </SplideSlide>
                     ))}

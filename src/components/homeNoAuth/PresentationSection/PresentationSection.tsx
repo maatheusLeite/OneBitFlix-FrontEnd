@@ -18,7 +18,7 @@ export default function PresentationSection() {
                             evoluindo como programador.
                         </p>
                         <Link className='text-decoration-none' href='/register'>
-                            <button className={'btn ' + styles.btnCta}>
+                            <button className={styles.btnCta}>
                                 ACESSE AGORA
                                 <img src="/buttonPlay.svg"
                                     alt='buttonImg'
