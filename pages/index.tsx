@@ -4,12 +4,14 @@ import CardsSection from "@/src/components/homeNoAuth/CardsSection/CardsSection"
 import PresentationSection from "@/src/components/homeNoAuth/PresentationSection/PresentationSection";
 import SlideSection from "@/src/components/homeNoAuth/SlideSection/SlideSection";
 import CourseService, { CourseType } from "../src/services/courseService";
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import { GetStaticProps } from "next";
 import '../styles/globals.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Head from "next/head";
-import Footer from '../src/components/common/Footer/Footer'
+import Footer from '../src/components/common/Footer/Footer';
+import AOS from "aos";
+import 'aos/dist/aos.css'
 
 interface IndexPageProps {
     children?: ReactNode,
@@ -17,24 +19,36 @@ interface IndexPageProps {
 }
 
 export default function HomeNoAuth({ course }: IndexPageProps) {
+    useEffect(() => {
+        AOS.init()
+    }, [])
+
     return (
         <>
             <Head>
                 <title> OneBitFlix </title>
                 <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon" />
                 <meta property="og:title" content="OneBitFlix" key="title" />
-                <meta 
-                    name="description" 
+                <meta
+                    name="description"
                     content="Tenha acesso aos melhores cursos de programação de uma forma simples e fácil!"
                 />
             </Head>
             <main>
-                <div className={styles.sectionBackground}>
+                <div
+                    className={styles.sectionBackground}
+                    data-aos="fade-zoom-in"
+                    data-aos-duration="1600"
+                >
                     <HeaderNoAuth />
                     <PresentationSection />
                 </div>
-                <CardsSection />
-                <SlideSection newestCourses={course} />
+                <div data-aos="fade-right" data-aos-duration="1200" >
+                    <CardsSection />
+                </div>
+                <div  data-aos="fade-up" data-aos-duration="1350" >
+                    <SlideSection newestCourses={course} />
+                </div>
                 <Footer />
             </main>
         </>

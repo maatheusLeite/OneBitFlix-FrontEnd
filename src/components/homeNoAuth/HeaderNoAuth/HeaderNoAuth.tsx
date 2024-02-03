@@ -26,13 +26,13 @@ export default function HeaderNoAuth() {
                 />
                 <div>
                     <Link href='/login'>
-                        <button className={'btn ' + styles.navBtn}>
+                        <button className={styles.navBtn}>
                             Entrar
                         </button>
                     </Link>
 
-                    <Link href='/registrer'>
-                        <button className={'btn ' + styles.navBtn}>
+                    <Link href='/register'>
+                        <button className={styles.navBtn}>
                             Quero fazer parte
                         </button>
                     </Link>

@@ -26,7 +26,10 @@
 
 .navBtn {
     margin: 0px 5px;
-    border-color: transparent;
+    padding: 8px 10px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 5px;
     color: $lightGray;
     transition: .3s;
     &:hover {
