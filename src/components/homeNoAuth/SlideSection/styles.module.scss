@@ -1,7 +1,11 @@
 @import '../../../../styles/colors.module.scss';
 
+.sectionTitle {
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .slideSectionBtn {
-    font-weight: 400;
     font-size: 18px;
     background-color: transparent;
     color: $white;
@@ -14,13 +18,21 @@
     border-radius: 6px;
     transition: .3s;
 
-    .btnImg {
-        width: 11px;
-    }
-
     &:hover {
-        border-color: $white;
-        background-color: $white;
-        color: #151515
+        border-color: $lightRed;
+        color: $lightGray;
     }
 }
+
+@media (max-width: 600px) {
+    .slideSectionBtn {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 300px) {
+    .slideSectionBtn {
+        font-size: 14px;
+    }
+}
+

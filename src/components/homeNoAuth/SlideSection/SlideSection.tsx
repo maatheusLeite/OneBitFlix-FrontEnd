@@ -11,8 +11,8 @@ interface props {
 export default function SlideSection({ newestCourses }: props) {
     return (
         <>
-            <Container>
-                <p className={styles.sectionType}> AULAS JÁ DISPONÍVEIS </p>
+            <Container className='d-flex flex-column align-items-center py-5'>
+                <p  className={styles.sectionTitle}> AULAS JÁ DISPONÍVEIS </p>
                 <SlideComponent course={newestCourses} />
                 <Link className='text-decoration-none' href='/register'>
                     <button className={styles.slideSectionBtn}>

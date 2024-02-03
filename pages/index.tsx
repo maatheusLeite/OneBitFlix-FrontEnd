@@ -6,7 +6,7 @@ import SlideSection from "@/src/components/homeNoAuth/SlideSection/SlideSection"
 import CourseService, { CourseType } from "../src/services/courseService";
 import { ReactNode } from "react";
 import { GetStaticProps } from "next";
-import '../styles/globals.scss'
+import '../styles/globals.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Head from "next/head";
 
