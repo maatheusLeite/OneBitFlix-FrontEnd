@@ -9,6 +9,7 @@ import { GetStaticProps } from "next";
 import '../styles/globals.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Head from "next/head";
+import Footer from '../src/components/common/Footer/Footer'
 
 interface IndexPageProps {
     children?: ReactNode,
@@ -34,6 +35,7 @@ export default function HomeNoAuth({ course }: IndexPageProps) {
                 </div>
                 <CardsSection />
                 <SlideSection newestCourses={course} />
+                <Footer />
             </main>
         </>
     )
