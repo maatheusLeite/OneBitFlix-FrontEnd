@@ -1,4 +1,4 @@
-import { Container } from 'reactstrap'
+import { Button, Container } from 'reactstrap'
 import styles from './styles.module.scss'
 import Link from 'next/link'
 
@@ -17,7 +17,7 @@ export default function HeaderGeneric({ logoUrl, btnUrl, btnContent }: props) {
                         <img src="/logoOnebitflix.svg" alt="logoRegister" className={styles.headerLogo} />
                     </Link>
                     <Link href={btnUrl}>
-                        <button className={styles.headerBtn}> {btnContent} </button>
+                        <Button className={styles.headerBtn}> {btnContent} </Button>
                     </Link>
                 </Container>
             </div>

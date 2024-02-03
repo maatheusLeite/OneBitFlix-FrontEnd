@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styles from './styles.module.scss'
-import { Container, Row, Col } from 'reactstrap'
+import { Container, Row, Col, Button } from 'reactstrap'
 
 export default function PresentationSection() {
     return (
@@ -18,13 +18,13 @@ export default function PresentationSection() {
                             evoluindo como programador.
                         </p>
                         <Link className='text-decoration-none' href='/register'>
-                            <button className={styles.btnCta}>
+                            <Button className={styles.btnCta}>
                                 ACESSE AGORA
                                 <img src="/buttonPlay.svg"
                                     alt='buttonImg'
                                     className={styles.btnImg}
                                 />
-                            </button>
+                            </Button>
                         </Link>
                     </Col>
                     <Col md>

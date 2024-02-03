@@ -1,4 +1,4 @@
-import { Container } from 'reactstrap'
+import { Button, Container } from 'reactstrap'
 import styles from './styles.module.scss'
 import Link from 'next/link'
 
@@ -26,15 +26,15 @@ export default function HeaderNoAuth() {
                 />
                 <div>
                     <Link href='/login'>
-                        <button className={styles.navBtn}>
+                        <Button className={styles.navBtn}>
                             Entrar
-                        </button>
+                        </Button>
                     </Link>
 
                     <Link href='/register'>
-                        <button className={styles.navBtn}>
+                        <Button className={styles.navBtn}>
                             Quero fazer parte
-                        </button>
+                        </Button>
                     </Link>
                 </div>
             </Container>

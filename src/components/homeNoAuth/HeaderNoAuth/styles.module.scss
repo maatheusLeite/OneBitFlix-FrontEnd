@@ -25,16 +25,15 @@
 }
 
 .navBtn {
-    margin: 0px 5px;
-    padding: 8px 10px;
-    background-color: transparent;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    color: $lightGray;
-    transition: .3s;
+    margin: 0px 5px !important;
+    background-color: transparent !important;
+    border: 1px solid transparent !important;
+    color: $lightGray !important;
+    transition: .3s !important;
+
     &:hover {
-        border-color: $lightRed;
-        color: $white;
+        border-color: $lightRed !important;
+        color: $white !important;
     }
 }
 
@@ -48,9 +47,9 @@
     }
 
     .navBtn {
-        margin: 16px 10px;
-        border-color: $white;
-        font-size: 14px;
+        margin: 16px 10px !important;
+        border-color: $white !important;
+        font-size: 14px !important;
     }
 
     .ctaSection {

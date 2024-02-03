@@ -6,33 +6,27 @@
 }
 
 .slideSectionBtn {
-    font-size: 18px;
-    background-color: transparent;
-    color: $white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    padding: 10px 25px;
-    border: 2px solid $white;
-    border-radius: 6px;
-    transition: .3s;
+    background-color: transparent !important;
+    color: $white !important;
+    padding: 10px 25px !important;
+    border: 2px solid $white !important;
+    transition: .3s !important;
 
     &:hover {
-        border-color: $lightRed;
-        color: $lightGray;
+        border-color: $lightRed !important;
+        color: $lightGray !important;
     }
 }
 
 @media (max-width: 600px) {
     .slideSectionBtn {
-        padding: 10px 15px;
+        padding: 10px 15px !important;
     }
 }
 
 @media (max-width: 300px) {
     .slideSectionBtn {
-        font-size: 14px;
+        font-size: 14px !important;
     }
 }
 

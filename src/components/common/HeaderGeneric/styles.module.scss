@@ -19,17 +19,14 @@
 }
 
 .headerBtn {
-    padding: 8px 15px;
-    background-color: transparent;
-    color: $white;
-    border: 1px solid $white;
-    border-radius: 5px;
-    transition: .3s;
-    font-size: 18px;
+    background-color: transparent !important;
+    color: $white !important;
+    border: 1px solid $white !important;
+    transition: .3s !important;
 
     &:hover {
-        border-color: $lightRed;
-        color: $lightGray;
+        border-color: $lightRed !important;
+        color: $lightGray !important;
     }
 }
 
@@ -45,6 +42,6 @@
     }
 
     .headerBtn {
-        font-size: 16px;
+        font-size: 16px !important;
     }
 }
