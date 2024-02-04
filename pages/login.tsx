@@ -1,6 +1,6 @@
-import styles from '../styles/registerLogin.module.scss'
 import '../styles/globals.scss'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import styles from '../styles/registerLogin.module.scss'
 import Head from 'next/head'
 import HeaderGeneric from '../src/components/common/HeaderGeneric/HeaderGeneric'
 import React, { FormEvent, useEffect, useState } from 'react'
@@ -15,6 +15,12 @@ export default function Login() {
     const [toastIsOpen, setToastIsOpen] = useState(false)
     const [toastMessage, setToastMessage] = useState('')
     const [toastColor, setToastColor] = useState('')
+
+    useEffect(() => {
+        if (sessionStorage.getItem('onebitflix-token')) {
+            router.push('/home')
+        }
+    }, [])
 
     useEffect(() => {
         const registerSuccess = router.query.registered // querry passada na url
@@ -58,7 +64,6 @@ export default function Login() {
         <>
             <Head>
                 <title> OneBitFlix - Login </title>
-                <title> OneBitFlix - Registro </title>
                 <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon" />
             </Head>
 
