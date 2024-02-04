@@ -10,14 +10,9 @@ import authService from '@/src/services/authService'
 import { useRouter } from 'next/router'
 import ToastComponent from '@/src/components/common/ToastComponent/ToastComponent'
 
-export default function register() {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+export default function Register() {
     const router = useRouter()
-
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [toastIsOpen, setToastIsOpen] = useState(false)
-
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [toastMessage, setToastMessage] = useState('')
 
     const handleRegister = async (event: FormEvent<HTMLFormElement>) => {
@@ -55,7 +50,7 @@ export default function register() {
         const { data, status } = await authService.register(params)
 
         if (status === 201) {
-            router.push('/login?registred=true')
+            router.push('/login?registered=true')
         }
         else {
             setToastIsOpen(true)
@@ -75,6 +70,7 @@ export default function register() {
                 { /* eslint-disable-next-line @next/next/no-sync-scripts*/}
                 <script src="https://jsuites.net/v4/jsuites.js"></script>
             </Head>
+
             <main className={styles.main}>
                 <HeaderGeneric
                     logoUrl='/'
@@ -136,7 +132,7 @@ export default function register() {
 
                         <FormGroup>
                             <Label for='email' className={styles.label} >
-                                EMAIL
+                                E-MAIL
                             </Label>
                             <Input
                                 id='email'
