@@ -5,14 +5,74 @@ import '../styles/globals.scss'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap'
 import Footer from '@/src/components/common/Footer/Footer'
+import { FormEvent, useState } from 'react'
+import authService from '@/src/services/authService'
+import { useRouter } from 'next/router'
+import ToastComponent from '@/src/components/common/ToastComponent/ToastComponent'
 
 export default function register() {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const router = useRouter()
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [toastIsOpen, setToastIsOpen] = useState(false)
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [toastMessage, setToastMessage] = useState('')
+
+    const handleRegister = async (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
+
+        const formData = new FormData(event.currentTarget) // pega os valores dos inputs da pagina
+        const firstName = formData.get("firstName")!.toString()
+        const lastName = formData.get("lastName")!.toString()
+        const phone = formData.get("phone")!.toString()
+        const birth = formData.get("birth")!.toString()
+        const email = formData.get("email")!.toString()
+        const password = formData.get("password")!.toString()
+        const confirmPassword = formData.get("confirmPassword")!.toString()
+
+        const params = {
+            firstName,
+            lastName,
+            phone,
+            birth,
+            email,
+            password
+        }
+
+        if (password != confirmPassword) {
+            setToastIsOpen(true)
+            setToastMessage('A senha e confirmação de senha porecisam ser iguais!')
+
+            setTimeout(() => {
+                setToastIsOpen(false)
+            }, 1000 * 3) // 3 segundos
+
+            return
+        }
+
+        const { data, status } = await authService.register(params)
+
+        if (status === 201) {
+            router.push('/login?registred=true')
+        }
+        else {
+            setToastIsOpen(true)
+            setToastMessage(data.message)
+
+            setTimeout(() => {
+                setToastIsOpen(false)
+            }, 1000 * 3) // 3 segundos
+        }
+    }
+
     return (
         <>
             <Head>
                 <title> OneBitFlix - Registro </title>
                 <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon" />
-                { /* eslint-disable-next-line @next/next/no-sync-scripts*/ }
+                { /* eslint-disable-next-line @next/next/no-sync-scripts*/}
                 <script src="https://jsuites.net/v4/jsuites.js"></script>
             </Head>
             <main className={styles.main}>
@@ -25,7 +85,7 @@ export default function register() {
                     <p className={styles.formTitle}>
                         <strong> Bem vindo(a) ao OneBitFlix! </strong>
                     </p>
-                    <Form className={styles.form}>
+                    <Form className={styles.form} onSubmit={handleRegister}>
                         <p className='text-center'>
                             <strong> Faça a sua conta! </strong>
                         </p>
@@ -119,12 +179,12 @@ export default function register() {
                         </FormGroup>
 
                         <FormGroup>
-                            <Label for='password' className={styles.label} >
+                            <Label for='confirmPassword' className={styles.label} >
                                 CONFIRME A SUA SENHA
                             </Label>
                             <Input
-                                id='password'
-                                name='password'
+                                id='confirmPassword'
+                                name='confirmPassword'
                                 type='password'
                                 placeholder='Confirme a sua senha'
                                 required
@@ -138,6 +198,11 @@ export default function register() {
                     </Form>
                 </Container>
                 <Footer />
+                <ToastComponent
+                    color='bg-danger'
+                    isOpen={toastIsOpen}
+                    message={toastMessage}
+                />
             </main>
         </>
     )
