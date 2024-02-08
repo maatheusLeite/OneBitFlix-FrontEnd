@@ -1,10 +1,11 @@
+import FeaturedSection from '@/src/components/HomeAuth/FeaturedSection/FeaturedSection';
 import HeaderAuth from '../src/components/HomeAuth/HeaderAuth/HeaderAuth';
 import '../styles/globals.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Head from 'next/head'
 import React from 'react'
 
-export default function Home() {
+export default function HomeAuth() {
     return (
         <>
             <Head>
@@ -13,7 +14,7 @@ export default function Home() {
             </Head>
 
             <main>
-                <HeaderAuth />
+                <FeaturedSection />
             </main>
         </>
     )
