@@ -7,6 +7,7 @@ import React from 'react'
 import NewestCategory from '@/src/components/HomeAuth/NewestCategory/NewestCategory';
 import FavoriteCategory from '@/src/components/HomeAuth/FavoriteCatogory/FavoriteCategory';
 import FeaturedCategory from '@/src/components/HomeAuth/FeaturedCategory/FeaturedCategory';
+import CategoriesList from '@/src/components/HomeAuth/CategoriesList/CategoriesList';
 
 export default function HomeAuth() {
     return (
@@ -21,6 +22,7 @@ export default function HomeAuth() {
                 <NewestCategory />
                 <FavoriteCategory />
                 <FeaturedCategory />
+                <CategoriesList />
             </main>
         </>
     )
