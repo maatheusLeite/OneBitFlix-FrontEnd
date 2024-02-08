@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Head from 'next/head'
 import React from 'react'
 import NewestCategory from '@/src/components/HomeAuth/NewestCategory/NewestCategory';
+import FavoriteCategory from '@/src/components/HomeAuth/FavoriteCatogory/FavoriteCategory';
 
 export default function HomeAuth() {
     return (
@@ -17,6 +18,7 @@ export default function HomeAuth() {
             <main>
                 <FeaturedSection />
                 <NewestCategory />
+                <FavoriteCategory />
             </main>
         </>
     )
