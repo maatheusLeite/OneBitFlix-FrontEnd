@@ -6,6 +6,7 @@ import Head from 'next/head'
 import React from 'react'
 import NewestCategory from '@/src/components/HomeAuth/NewestCategory/NewestCategory';
 import FavoriteCategory from '@/src/components/HomeAuth/FavoriteCatogory/FavoriteCategory';
+import FeaturedCategory from '@/src/components/HomeAuth/FeaturedCategory/FeaturedCategory';
 
 export default function HomeAuth() {
     return (
@@ -19,6 +20,7 @@ export default function HomeAuth() {
                 <FeaturedSection />
                 <NewestCategory />
                 <FavoriteCategory />
+                <FeaturedCategory />
             </main>
         </>
     )
