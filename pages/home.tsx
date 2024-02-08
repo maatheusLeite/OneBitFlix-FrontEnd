@@ -4,6 +4,7 @@ import '../styles/globals.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Head from 'next/head'
 import React from 'react'
+import NewestCategory from '@/src/components/HomeAuth/NewestCategory/NewestCategory';
 
 export default function HomeAuth() {
     return (
@@ -15,6 +16,7 @@ export default function HomeAuth() {
 
             <main>
                 <FeaturedSection />
+                <NewestCategory />
             </main>
         </>
     )

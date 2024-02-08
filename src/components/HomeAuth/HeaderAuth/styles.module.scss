@@ -36,19 +36,19 @@
 }
 
 .input {
-    background-color: transparent;
-    color: $white;
-    border-color: $lightGray;
+    background-color: transparent !important;
+    color: $white !important;
+    border-color: $lightGray !important;
 
     &:focus {
-        background-color: transparent;
-        color: $white;
-        border-color: $mediumGray;
-        box-shadow: none;
+        background-color: transparent !important;
+        color: $white !important;
+        border-color: $mediumGray !important;
+        box-shadow: none !important;
     }
 
     &::placeholder {
-        color: $white;
+        color: $white !important;
     }
 }
 

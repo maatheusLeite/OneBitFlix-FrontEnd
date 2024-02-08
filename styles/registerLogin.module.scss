@@ -41,15 +41,6 @@
     }
 }
 
-.inputName {
-    @extend .input;
-    text-transform: uppercase !important;
-
-    &::placeholder {
-        text-transform: none !important;
-    }
-}
-
 .formBtn {
     display: block !important;
     margin: 50px auto 0px auto !important;
