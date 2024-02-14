@@ -6,8 +6,13 @@ import UserForm from "@/src/components/Profile/UserForm/UserForm"
 import HeaderAuth from '@/src/components/HomeAuth/HeaderAuth/HeaderAuth'
 import { Button, Col, Container, Row } from 'reactstrap'
 import Footer from '@/src/components/common/Footer/Footer'
+import { useState } from 'react'
+import PasswordForm from '@/src/components/Profile/PasswordForm/PasswordForm'
 
 export default function profile() {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [form, setForm] = useState('userForm')
+
     return (
         <>
             <Head>
@@ -24,18 +29,28 @@ export default function profile() {
 
                     <Row className='pt-3 pb-5'>
                         <Col md={4} className={styles.btnColumn}>
-                            <Button className={styles.renderForm}> DADOS PESSOAIS </Button>
-                            <Button className={styles.renderForm}> SENHA </Button>
+                            <Button
+                                className={styles.renderForm}
+                                style={{ color: form === 'userForm' ? '#ff0044' : '#f9f9f9' }}
+                                onClick={() => setForm('userForm')}
+                            >
+                                DADOS PESSOAIS
+                            </Button>
+                            <Button
+                                className={styles.renderForm}
+                                style={{ color: form === 'passwordForm' ? '#ff0044' : '#f9f9f9' }}
+                                onClick={() => setForm('passwordForm')}
+                            >
+                                SENHA
+                            </Button>
                         </Col>
 
                         <Col>
-                            <UserForm />
+                            {form === 'userForm' ? <UserForm /> : <PasswordForm />}
                         </Col>
                     </Row>
                 </Container>
-                <div className={styles.footer}>
-                    <Footer />
-                </div>
+                <Footer />
             </main>
         </>
     )

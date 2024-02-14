@@ -128,14 +128,18 @@
 
     &:hover {
         background-color: transparent;
-        border-color: $lightRed;
-        color: $lightGray;
+        color: $lightRed;
+    }
+
+    &:focus {
+        background-color: transparent;
+        box-shadow: none;
     }
 }
 
-.footer {
-    background-color: #000 !important;
-    padding: 2px 0px;
+.btnDiv {
+    margin: auto 0;
+    padding-top: 15px;
 }
 
 @media (max-width: 991px) {
