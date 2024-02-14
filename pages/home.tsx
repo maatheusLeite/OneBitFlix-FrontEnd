@@ -8,6 +8,7 @@ import NewestCategory from '@/src/components/HomeAuth/NewestCategory/NewestCateg
 import FavoriteCategory from '@/src/components/HomeAuth/FavoriteCatogory/FavoriteCategory';
 import FeaturedCategory from '@/src/components/HomeAuth/FeaturedCategory/FeaturedCategory';
 import CategoriesList from '@/src/components/HomeAuth/CategoriesList/CategoriesList';
+import Footer from '@/src/components/common/Footer/Footer';
 
 export default function HomeAuth() {
     return (
@@ -23,6 +24,7 @@ export default function HomeAuth() {
                 <FavoriteCategory />
                 <FeaturedCategory />
                 <CategoriesList />
+                <Footer />
             </main>
         </>
     )
