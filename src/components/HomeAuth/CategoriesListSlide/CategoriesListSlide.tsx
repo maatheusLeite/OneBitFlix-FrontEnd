@@ -3,6 +3,7 @@ import CategoriesService from '@/src/services/categoriesService'
 import React from 'react'
 import useSWR from 'swr'
 import SlideComponent from '../../common/SlideComponent/SlideComponent'
+import PageSpinner from '../../common/PageSpinner/PageSpinner'
 
 interface props {
     categoryId: number,
@@ -13,7 +14,7 @@ export default function CategoriesListSlide({ categoryId, categoryName }: props)
     const { data, error } = useSWR(`/categoryCourses/${categoryId}`, () => CategoriesService.getCourses(categoryId))
 
     if (error) return error
-    if (!data) return (<><p> Loading... </p></>)
+    if (!data) return <PageSpinner />
 
     return (
         <>

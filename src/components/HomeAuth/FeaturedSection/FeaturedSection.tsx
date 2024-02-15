@@ -5,12 +5,13 @@ import HeaderAuth from '../HeaderAuth/HeaderAuth'
 import { Button, Container } from 'reactstrap'
 import Link from 'next/link'
 import { statSync } from 'fs'
+import PageSpinner from '../../common/PageSpinner/PageSpinner'
 
 export default function FeaturedSection() {
     const { data, error } = useSWR('/featured', CourseService.getFeaturedCourses)
 
     if (error) return error
-    if (!data) return (<><p> Loading... </p></>)
+    if (!data) return <PageSpinner />
 
     return (
         <>
