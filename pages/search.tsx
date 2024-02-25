@@ -41,7 +41,7 @@ export default function search() {
                 </div>
                 {
                     searchResult.length >= 1 ? (
-                        <div className={styles.searchResult}>
+                        <div className={styles.searchContainer}>
                             <Container className='d-flex flex-wrap justify-content-center gap-5 py-4'>
                                 {
                                     searchResult?.map((course) => (
@@ -53,7 +53,9 @@ export default function search() {
                     )
                     :
                     (
-                        <p className={styles.noSearchText}> Nenhum resultaedo encontrado :/ </p>
+                        <div className={styles.searchContainer}>
+                            <p className={`${styles.noSearchText} pt-5`}> Nenhum resultaedo encontrado :/ </p>
+                        </div>
                     )
                 }
 
