@@ -9,10 +9,29 @@ import CourseService, { CourseType } from '@/src/services/courseService'
 import { Container } from 'reactstrap'
 import SearchCard from '@/src/components/HomeAuth/SearchCard/SearchCard'
 import Footer from '@/src/components/common/Footer/Footer'
+import PageSpinner from '@/src/components/common/PageSpinner/PageSpinner'
 
 export default function search() {
+     // eslint-disable-next-line react-hooks/rules-of-hooks
+     const router = useRouter()
+
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const router = useRouter()
+    const [loading, setLoading] = useState(true)
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useEffect(() => {
+        if (!sessionStorage.getItem('onebitflix-token')) {
+            router.push('/login')
+        }
+        else {
+            setLoading(false)
+        }
+    }, [])
+
+    if (loading) {
+        return <PageSpinner />
+    }
+
     const searchName: any = router.query.name
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -51,12 +70,12 @@ export default function search() {
                             </Container>
                         </div>
                     )
-                    :
-                    (
-                        <div className={styles.searchContainer}>
-                            <p className={`${styles.noSearchText} pt-5`}> Nenhum resultaedo encontrado :/ </p>
-                        </div>
-                    )
+                        :
+                        (
+                            <div className={styles.searchContainer}>
+                                <p className={`${styles.noSearchText} pt-5`}> Nenhum resultaedo encontrado :/ </p>
+                            </div>
+                        )
                 }
 
                 <div className={styles.headerFooterBg}>

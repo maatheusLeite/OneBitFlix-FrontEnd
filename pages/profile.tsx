@@ -6,12 +6,33 @@ import UserForm from "@/src/components/Profile/UserForm/UserForm"
 import HeaderAuth from '@/src/components/HomeAuth/HeaderAuth/HeaderAuth'
 import { Button, Col, Container, Row } from 'reactstrap'
 import Footer from '@/src/components/common/Footer/Footer'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import PasswordForm from '@/src/components/Profile/PasswordForm/PasswordForm'
+import PageSpinner from '@/src/components/common/PageSpinner/PageSpinner'
+import { useRouter } from 'next/router'
 
 export default function profile() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [form, setForm] = useState('userForm')
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const router = useRouter()
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [loading, setLoading] = useState(true)
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useEffect(() => {
+        if (!sessionStorage.getItem('onebitflix-token')) {
+            router.push('/login')
+        }
+        else {
+            setLoading(false)
+        }
+    }, [])
+
+    if (loading) {
+        return <PageSpinner />
+    }
 
     return (
         <>

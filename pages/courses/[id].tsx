@@ -16,10 +16,21 @@ import Footer from '@/src/components/common/Footer/Footer'
 export default function CoursePage() {
     const router = useRouter()
     const { id } = router.query // Pelo arquivo ser dinamico, o id pode ser recuperado pela desestruturação da URL
-
+    
     const [course, setCourse] = useState<CourseType>()
     const [liked, setLiked] = useState(false)
     const [favorited, setFavorited] = useState(false)
+
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        if (!sessionStorage.getItem('onebitflix-token')) {
+            router.push('/login')
+        }
+        else {
+            setLoading(false)
+        }
+    }, [])
 
     const getCourse = async function () {
         if (typeof id !== 'string') {
@@ -35,6 +46,7 @@ export default function CoursePage() {
         }
     }
 
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
         getCourse()
     }, [id]) // chama o useEffect toda vez que o id mudar
@@ -70,6 +82,10 @@ export default function CoursePage() {
     }
 
     if (course === undefined) {
+        return <PageSpinner />
+    }
+
+    if (loading) {
         return <PageSpinner />
     }
 
